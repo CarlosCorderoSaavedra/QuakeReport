@@ -1,26 +1,64 @@
 package com.example.android.quakereport;
 
-/**
- * Created by carlos.cordero on 9/6/17.
- */
 
+/**
+ * An {@link Earthquake} object contains information related to a single earthquake.
+ */
 public class Earthquake {
 
-    private String mMagnitude;
-    private String mDate;
-    private String mLocate;
+    /** Magnitude of the earthquake */
+    private double mMagnitude;
 
-    public Earthquake(String magnitude,  String locate , String date) {
+    /** Location of the earthquake */
+    private String mLocation;
 
+    /** Time of the earthquake */
+    private long mTimeInMilliseconds;
+
+    /** Website URL of the earthquake */
+    private String mUrl;
+
+    /**
+     * Constructs a new {@link Earthquake} object.
+     *
+     * @param magnitude is the magnitude (size) of the earthquake
+     * @param location is the location where the earthquake happened
+     * @param timeInMilliseconds is the time in milliseconds (from the Epoch) when the
+     *                           earthquake happened
+     * @param url is the website URL to find more details about the earthquake
+     */
+    public Earthquake(double magnitude, String location, long timeInMilliseconds, String url) {
         mMagnitude = magnitude;
-        mLocate = locate;
-        mDate = date;
+        mLocation = location;
+        mTimeInMilliseconds = timeInMilliseconds;
+        mUrl = url;
     }
 
-    public String getMagnitude() {return mMagnitude;}
+    /**
+     * Returns the magnitude of the earthquake.
+     */
+    public double getMagnitude() {
+        return mMagnitude;
+    }
 
-    public String getLocate() {return mLocate;}
+    /**
+     * Returns the location of the earthquake.
+     */
+    public String getLocation() {
+        return mLocation;
+    }
 
-    public String getDate() {return mDate;}
+    /**
+     * Returns the time of the earthquake.
+     */
+    public long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
+    }
 
+    /**
+     * Returns the website URL to find more information about the earthquake.
+     */
+    public String getUrl() {
+        return mUrl;
+    }
 }
